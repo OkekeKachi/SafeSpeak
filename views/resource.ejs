@@ -1,0 +1,179 @@
+<%- include('partials/navbar') %>
+
+
+<header class="resources-header">
+    <div class="container">
+        <h1>Resources</h1>
+        <p>Your go-to page for tools, guides, and support in addressing Sexual and Gender-Based Violence.</p>
+        <a href="#resources-list" class="btn-primary">Explore Resources</a>
+    </div>
+</header>
+<br><br>
+
+<section class="resources-section">
+    <div class="container" style="max-width: 800px; margin: 0 auto;">
+        <h2 class="section-title" data-aos="fade-down">Available Resources</h2>
+
+        <!-- Resource Item 1 -->
+        <div class="resource-item" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="200">
+            <div class="resource-header">
+                <div class="resource-icon-text">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2950/2950733.png" alt="Resource Icon">
+                    <h5>Legal Support Services</h5>
+                </div>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="resource-body">
+                <p>
+                    Get free legal advice and representation to help you take necessary actions after reporting an
+                    incident. Available 24/7.
+                </p>
+            </div>
+        </div>
+
+        <!-- Resource Item 2 -->
+        <div class="resource-item" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400">
+            <div class="resource-header">
+                <div class="resource-icon-text">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2950/2950718.png" alt="Resource Icon">
+                    <h5>Counseling & Mental Health</h5>
+                </div>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="resource-body">
+                <p>
+                    Access licensed therapists who specialize in trauma recovery. Sessions can be booked online or in
+                    person.
+                </p>
+            </div>
+        </div>
+
+        <!-- Resource Item 3 -->
+        <div class="resource-item" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="600">
+            <div class="resource-header">
+                <div class="resource-icon-text">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2913/2913416.png" alt="Resource Icon">
+                    <h5>Hotlines & Emergency Contacts</h5>
+                </div>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="resource-body">
+                <p>
+                    Contact helplines or emergency services for immediate assistance. Available nationwide.                    
+                </p>
+            </div>
+        </div>
+        <div class="resources-container" style="max-width: 800px; margin: 0 auto;">
+            <!-- Resource 1 -->
+            <div class="resource-item" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="200">
+                <div class="resource-header">
+                    <div class="resource-icon-text">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4149/4149637.png" alt="Support Icon" />
+                        <h5>How can I access counseling services?</h5>
+                    </div>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="resource-body">
+                    <h6>You can schedule an appointment with a professional counselor through our platform. Services are
+                        available both online and offline.</h6>
+                </div>
+            </div>
+        
+            <!-- Resource 2 -->
+            <div class="resource-item" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="400">
+                <div class="resource-header">
+                    <div class="resource-icon-text">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt="Incident Icon" />
+                        <h5>What resources are available for survivors?</h5>
+                    </div>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="resource-body">
+                    <h6>We offer legal assistance, medical care, and emotional support resources. Our team works to connect
+                        survivors with the right services.</h6>
+                </div>
+            </div>
+        
+            <!-- Resource 3 -->
+            <div class="resource-item" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="600">
+                <div class="resource-header">
+                    <div class="resource-icon-text">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3209/3209287.png" alt="Hotline Icon" />
+                        <h5>Is there a hotline I can call for emergencies?</h5>
+                    </div>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="resource-body">
+                    <h6>Yes, our 24/7 emergency hotline is available to provide immediate assistance. Call us at 1-800-HELP-NOW.
+                    </h6>
+                </div>
+            </div>
+        
+            <!-- Resource 4 -->
+            <div class="resource-item" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="800">
+                <div class="resource-header">
+                    <div class="resource-icon-text">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1006/1006555.png" alt="Shelter Icon" />
+                        <h5>Where can I find safe shelters?</h5>
+                    </div>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="resource-body">
+                    <h6>Our platform provides a list of verified safe shelters in your area. You can search by location or
+                        contact our team for assistance.</h6>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="speak-up-section">
+    <div class="container">
+        <h2 class="section-title">Your Voice Matters</h2>
+        <p class="section-text">
+            Silence is not the solution. Every story told has the power to bring change, and every voice raised has the
+            potential to inspire others to do the same. By speaking up, you help create a safer and more supportive
+            world for everyone.
+        </p>
+        <blockquote class="motivational-quote">
+            "Courage starts with showing up and letting ourselves be seen." – Brené Brown
+        </blockquote>
+        <a href="#" class="btn-primary">Take a Stand Today</a>
+    </div>
+</section>
+
+
+<script>
+    const resourceItems = document.querySelectorAll('.resource-item');
+
+        resourceItems.forEach(item => {
+            const header = item.querySelector('.resource-header');
+            const body = item.querySelector('.resource-body');
+
+            header.addEventListener('click', () => {
+                // Toggle active class
+                item.classList.toggle('active');
+
+                if (item.classList.contains('active')) {
+                    body.style.maxHeight = `${body.scrollHeight}px`; // Correctly set the height
+                    body.style.paddingBottom = '15px'; // Restore padding
+                } else {
+                    body.style.maxHeight = '0'; // Collapse
+                    body.style.padding = '0 20px'; // Remove vertical padding
+                }
+            });
+
+            // Fix first-time calculation issue
+            body.addEventListener('transitionend', () => {
+                if (item.classList.contains('active')) {
+                    body.style.maxHeight = 'none'; // Ensure proper fit for repeated clicks
+                }
+            });
+        });
+
+</script>
+
+<script src="app.js"></script>
+
+<%- include('partials/footer') %>

@@ -1,385 +1,280 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SGBV</title>
-    <link rel="stylesheet" href="stylesheets/style.css">    
-    <link rel="stylesheet" href="stylesheets/materialize.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
-  
-</head>
-<body>
-    <nav class="white" style="height: 100px; padding-top: 10px; padding-bottom: 10px;">
-        <div class="nav-wrapper container" style="display: flex;">
-            <!-- Left-aligned brand logo -->
-            <a href="/" class="brand-logo blue-text text-darken-2">SGBV Report</a>
-
-            <!-- Mobile menu trigger -->
-            <a href="#" data-target="mobile-nav" class="sidenav-trigger">
-                <i class="material-icons blue-text">menu</i>
-            </a>
-
-            <!-- Centered links using flexbox -->
-            <ul class="center hide-on-med-and-down"
-                style="flex-grow: 1; display: flex; justify-content: space-between; padding-left:250px; padding-right: 50px;">
-                <li><a href="/" class=" nav-links ">Home</a></li>
-                <li><a href="/report" class=" nav-links ">Report Incident</a></li>
-                <li><a href="/resources" class=" nav-links ">Resources</a></li>
-                <li><a href="/about" class=" nav-links ">About Us</a></li>
-                <li><a href="/contact" class=" nav-links ">Contact</a></li>
-            </ul>
-
-            <!-- Right-aligned login button -->
-            <ul class="right hide-on-med-and-down" style="padding-left: 0;">
-                <li><a href="/login" class="btn-large blue lighten-1 white-text">Login</a></li>
-            </ul>
+    <%- include('partials/navbar') %>    
+    <section class="hero-section"
+        style="position: relative; height: 80vh; color: white; display: flex; justify-content: flex-start;  text-align: left; ">
+        <!-- Blurred background image using pseudo-element -->
+        <div class="hero-image"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;background-image: url('images/hero-image.jpg'); background-size: cover;  z-index: -1;">
         </div>
-    </nav>
 
-    <!-- Mobile Sidebar -->
-    <ul class="sidenav" id="mobile-nav">
-        <li><a href="/" class="blue-text text-darken-2">Home</a></li>
-        <li><a href="/report" class="blue-text text-darken-2">Report Incident</a></li>
-        <li><a href="/resources" class="blue-text text-darken-2">Resources</a></li>
-        <li><a href="/about" class="blue-text text-darken-2">About Us</a></li>
-        <li><a href="/contact" class="blue-text text-darken-2">Contact</a></li>
-        <li><a href="/login" class="btn-small blue lighten-1 white-text">Login</a></li>
-    </ul>
-        <section class="hero-section"
-            style="position: relative; height: 80vh; color: white; display: flex; justify-content: flex-start; align-items: center; text-align: left; padding-left: 50px;">
-            <!-- Blurred background image using pseudo-element -->
-            <div class="hero-image"
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;background-image: url('images/hero-image.jpg'); background-size: cover;  z-index: -1;">
-            </div>
-
-            <div class="container" style="z-index: 1; max-width: 500px; margin-left: 200px;">
-                <h1 class="hero-title" style="font-size: 60px; font-weight: bold; margin-bottom: 20px; color:#e1dede;">Stand
-                    Against <span style="color: yellow;">Sexual and Gender Based Violence</span></h1>
-                <p class="hero-subtitle" style="font-size: 1.5rem; margin-bottom: 30px;">A platform to report and raise
-                    awareness about sexual and gender-based violence.</p>
-                <a href="/report" class="btn-large blue darken-4 white-text"
-                    style="font-size: 18px; border-radius: 10px; text-transform: uppercase;">Report an
+        <div style="z-index: 1; max-width: 800px;box-shadow:5px 5px 15px rgba(39, 116, 241, 0.1); background-color: rgba(39, 116, 241, 0.1); padding: 60px;">
+            <div style="padding-left: 150px;" >
+                <h1 data-aos="fade-right" data-aos-duration="2000" data-aos-delay="200" class="hero-title" style="font-size: 60px; font-weight: bold; margin-bottom: 20px; color:#e1dede;">
+                    Stand
+                    Against <span style="color: rgb(255, 187, 0);">Sexual and Gender Based Violence</span></h1>
+                <p data-aos="fade-left" data-aos-duration="2000" data-aos-delay="200" class="hero-subtitle" style="font-size: 1.5rem; margin-bottom: 30px;">A platform to report and raise
+                    awareness about sexual and gender-based violence.</p><br><br>
+                <a data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200" href="/report" class="btn-large blue darken-4 white-text"
+                    style="font-size:<% if(user){%>14px;<%}else{%>18px;<%}%> border-radius: 10px; text-transform: uppercase;">Report an
                     Incident</a>
+                <% if (user) { %>
+                    <a data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200" href="/view-reports"
+                        class="btn-large orange darken-4 white-text"
+                        style="font-size: 14px; border-radius: 10px; text-transform: uppercase;">View your Reports</a>
+                <% } %>
+
             </div>
-        </section>
-<section class="how-it-works" style="background-color: #f4f4f9; padding: 60px 0; text-align: center;">
-    <div class="container">
-        <h2 class="section-title" style="font-size: 2.5rem; color: #333; margin-bottom: 40px;">How To Report an Incident
-        </h2>
-        <div class="row">
-            <div class="col s12 m4">
-                <div class="step card-hover">
-                    <img src="https://th.bing.com/th/id/R.f6155cd9c1469a4310b03f1fa6b3a0a8?rik=WDLTQy5zYWPDTg&pid=ImgRaw&r=0"
-                        alt="Report Form">
-                    <h4>Step 1</h4>
-                    <h5>Fill out the Report Form</h5>
-                    <p>Provide the necessary details about the incident. You can choose to remain anonymous.</p><br>
+
+        </div>
+    </section>
+    <section class="how-it-works" style="background-color: #f4f4f9; padding: 60px 0; text-align: center;">
+        <div class="container">
+            <h2 class="section-title" style="font-size: 2.5rem; color: #333; margin-bottom: 40px;">How To Report an
+                Incident
+            </h2>
+            <div class="row">
+                <div class="col s12 m4" data-aos="slide-up" data-aos-duration="1000" data-aos-delay="200" >
+                    <div class="step card-hover">
+                        <img src="https://th.bing.com/th/id/OIP.2Mc1Z16r7epJsSN6_1jMZwHaD4?rs=1&pid=ImgDetMain"
+                            alt="Report Form">
+                        <h4>Step 1</h4>
+                        <h5>Fill out the Report Form</h5>
+                        <p>Provide the necessary details about the incident. You can choose to remain anonymous.</p><br>
+                    </div>
                 </div>
-            </div>
-            <div class="col s12 m4">
-                <div class="step card-hover">
-                    <img src="https://immap.org/wp-content/uploads/2024/12/OCHAAlioune-Ndiaye-1024x597.jpg"
-                        alt="Get Help">
-                    <h4>Step 2</h4>
-                    <h5>Get Immediate Help</h5>
-                    <p>Once your report is submitted, you will be connected with resources for immediate assistance.</p>
+                <div class="col s12 m4" data-aos="slide-up" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="step card-hover">
+                        <img src="https://immap.org/wp-content/uploads/2024/12/OCHAAlioune-Ndiaye-1024x597.jpg"
+                            alt="Get Help">
+                        <h4>Step 2</h4>
+                        <h5>Get Immediate Help</h5>
+                        <p>Once your report is submitted, you will be connected with resources for immediate assistance.
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="col s12 m4">
-                <div class="step card-hover">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQug4jzMzVKeo3lquIXbahNcSx-BU_TM-B5Q&s"
-                        alt="Follow-up Support">
-                    <h4>Step 3</h4>
-                    <h5>Follow-up for Support</h5>
-                    <p>You can follow up to track your report and continue receiving the necessary support.</p><br>
+                <div class="col s12 m4">
+                    <div class="step card-hover" data-aos="slide-up" data-aos-duration="1000" data-aos-delay="400">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQug4jzMzVKeo3lquIXbahNcSx-BU_TM-B5Q&s"
+                            alt="Follow-up Support">
+                        <h4>Step 3</h4>
+                        <h5>Follow-up for Support</h5>
+                        <p>You can follow up to track your report and continue receiving the necessary support.</p><br>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 
 
-<!-- Main Content Section -->
-<section class="why-it-matters" style="background-color: #f9f9f9; padding: 60px 0;">
-    <div class="container">
-        <h2 class="section-title" style="font-size: 2.5rem; color: #333; text-align: center; margin-bottom: 40px;">Why
-            Reporting Matters</h2>
+    <!-- Main Content Section -->
+    <section class="why-it-matters" style="background-color: #f9f9f9; padding: 60px 0;">
+        <div class="container">
+            <h2 class="section-title" style="font-size: 2.5rem; color: #333; text-align: center; margin-bottom: 40px;">
+                Why
+                Reporting Matters</h2>
 
 
-        <!-- Parallax Section -->
-        <section class="parallax-container" style="position: relative; height: 400px; overflow: hidden;">
-            <div class="parallax-image" style="background-image: url('https://th.bing.com/th?id=OIF.QXA2WNynBKaV%2fCHvKlkyHw&rs=1&pid=ImgDetMain');
+            <!-- Parallax Section -->
+            <section class="parallax-container" style="position: relative; height: 400px; overflow: hidden;">
+                <div class="parallax-image" style="background-image: url('https://www.globalgiving.org/pfil/38244/pict_large.jpg');
             
                         background-attachment: fixed; 
                         background-position: center; 
                         background-repeat: no-repeat; 
-                        background-size: 1000px;                                            
+                        background-size: 1000px;    
                         height: 100%; 
                         width: 100%; 
-                        filter: brightness(75%);">                        
-            </div>
-            <div class="parallax-overlay" style="position: absolute; 
+                        filter: brightness(75%);">
+                </div>
+                <div class="parallax-overlay" style="position: absolute; 
                         top: 50%; 
                         left: 50%; 
                         transform: translate(-50%, -50%); 
                         color: white; 
                         text-align: center; 
                         z-index: 2;">
-                <h1 style="font-size: 2.5rem; font-weight: bold;">Your Voice. Your Power.</h1>
-                <p style="font-size: 1.2rem;">Together, we can make a difference in combating violence.</p>
-            </div>
-        </section>
-        <br><br>
-        <!-- Stats or Impact Section -->
-        <div class="row">
-            <div class="col s12 m6">
-                <div class="stat-card"
-                    style="background-color: white; text-align: center; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <h3 style="font-size: 2rem; color: #005fa3; font-size: 35px; font-weight:bold;">85 <span style="color: rgb(255, 213, 0);">%</span></h3>
-                    <p style="color: #555; font-size: 15px; font-weight:bold;">Of SGBV incidents go unreported. Your voice matters!</p><br>
+                    <h1 style="font-size: 2.5rem; font-weight: bold;">Your Voice. Your Power.</h1>
+                    <p style="font-size: 1.2rem;">Together, we can make a difference in combating violence.</p>
                 </div>
-            </div>
-            <div class="col s12 m6">
-                <div class="stat-card"
-                    style="background-color: white; text-align: center; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <h3 style="font-size: 2rem; color: #005fa3; font-size: 35px; font-weight:bold;"><span style="color: rgb(255, 213, 0);">1 </span>in 3</h3>
-                    <p style="color: #555; font-size: 15px; font-weight:bold;">Women experience violence in their lifetime. Reporting can help reduce these
-                        statistics.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Testimonials or Success Stories Section -->
-        <div class="testimonials" style="margin-top: 40px; text-align: center;">
-            <h3 style="font-size: 1.8rem; color: #333; margin-bottom: 20px;">Real Stories, Real Impact</h3>
-            <blockquote style="font-style: italic; color: #555; font-size: 1.2rem; margin: 20px auto; width: 70%;">
-                "Thanks to this platform, I was able to report my incident and received the support I desperately
-                needed. I encourage others to do the same."
-            </blockquote>
-            <p>- Anonymous Survivor</p>
-        </div>
-    </div>
-</section>
-
-<section class="resources-support" style="background-color: #eef5ff; padding: 60px 0;">
-    <div class="container">
-        <h2 class="section-title" style="font-size: 2.5rem; color: #005fa3; text-align: center; margin-bottom: 40px;">
-            Resources and Support</h2>                      
-        <iframe width="1100" height="630" src="https://www.youtube.com/embed/k8zzHhhpKa0?si=CfHbwZbr9wrpfhft"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <br><br>
-        <div class="row">
-            <div class="col s12 m4">
-                <div class="card-hover"
-                    style="background: white; padding: 20px; text-align: center; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <img src="https://img.freepik.com/premium-psd/phone-call-contact-communication-web-button-helpline-hotline-3d-realistic-icon_92753-8921.jpg" alt="Hotline"
-                        style="width: 120px; height: 120px; margin-bottom: 8px;">
-                    <h4 style="font-size: 1.5rem; color: #005fa3;">Hotline</h4>
-                    <p style="color: #555;">Call our 24/7 helpline to get immediate assistance from professionals.</p>
-                    <a href="tel:+123456789" class="btn"
-                        style="background-color: #005fa3; color: white; margin-top: 10px;">Call Now</a>
-                </div>
-            </div>
-            <div class="col s12 m4">
-                <div class="card-hover"
-                    style="background: white; padding: 20px; text-align: center; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <img src="https://img.freepik.com/premium-vector/guide-icon-vector-user-manual-service-information-document-instruction_87543-18058.jpg?w=360" alt="Guide"
-                        style="width: 120px; height: 120px; margin-bottom: 8px;">
-                    <h4 style="font-size: 1.5rem; color: #005fa3;">Reporting Guide</h4>
-                    <p style="color: #555;">Download our step-by-step guide on how to report an incident effectively.
-                    </p>
-                    <a href="#" class="btn"
-                        style="background-color: #005fa3; color: white; margin-top: 10px;">Download</a>
-                </div>
-            </div>
-            <div class="col s12 m4">
-                <div class="card-hover"
-                    style="background: white; padding: 20px; text-align: center; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_UjYhpgnNJVCN8is-XlhulWXvonPTeBoM3g&s" alt="FAQs"
-                        style="width: 120px; height: 120px; margin-bottom: 8px;">
-                    <h4 style="font-size: 1.5rem; color: #005fa3;">FAQs</h4>
-                    <p style="color: #555;">Have questions? Check out our FAQs to get quick answers to common concerns.
-                    </p>
-                    <a href="#faq-section" class="btn"
-                        style="background-color: #005fa3; color: white; margin-top: 10px;">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="cta-section" style="background-color: #005fa3; color: white; padding: 60px 0; text-align: center;">
-    <div class="container">
-        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Take a Stand Against SGBV Today</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 40px;">Your voice can make a difference. Join us in creating a safer
-            world for everyone.</p>
-        <a href="/report" class="btn-large white-text"
-            style="background-color: #ff7043;  font-size: 18px; text-transform: uppercase; border-radius: 5px;">Report
-            Now</a>
-    </div>
-</section>
-<section class="faq-section" style="background-color: #f4f4f9; padding: 60px 0;">
-    <div class="container">
-        <h2 class="section-title" style="font-size: 2.5rem; color: #333; text-align: center; margin-bottom: 40px;">
-            Frequently Asked Questions</h2>
-        <div class="faq-container" style="max-width: 800px; margin: 0 auto;">
-
-            <!-- FAQ Item 1 -->
-            <div class="faq-item" style="margin-bottom: 20px;">
-                <div class="faq-question"
-                    style="display: flex; align-items: center; justify-content: space-between; background: white; padding: 15px 20px; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <div style="display: flex; align-items: center;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2950/2950733.png" alt="Help Icon"
-                            style="width: 24px; height: 24px; margin-right: 10px;">
-                        <h4 style="font-size: 1.2rem; color: #005fa3;">What happens after I report an incident?</h4>
+            </section>
+            <br><br>
+            <!-- Stats or Impact Section -->
+            <div class="row">
+                <div class="col s12 m6" data-aos="slide-right" data-aos-duration="2000" data-aos-delay="200">
+                    <div class="stat-card"
+                        style="background-color: white; text-align: center; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <h3 style="font-size: 2rem; color: #005fa3; font-size: 35px; font-weight:bold;">95 <span
+                                style="color: rgb(255, 213, 0);">%</span></h3>
+                        <p style="color: #555; font-size: 15px; font-weight:bold;">Of SGBV incidents go unreported. Your
+                            voice matters!</p><br>
                     </div>
-                    <span class="toggle-icon" style="font-size: 1.5rem; color: #005fa3;">+</span>
                 </div>
-                <div class="faq-answer"
-                    style="display: none; padding: 15px 20px; background-color: #fff; border-radius: 8px; margin-top: 10px; color: #555;">
-                    Your report is confidential and will be reviewed by professionals who can provide the necessary
-                    support. You'll receive a response within 24 hours.
-                </div>
-            </div>
-
-            <!-- FAQ Item 2 -->
-            <div class="faq-item" style="margin-bottom: 20px;">
-                <div class="faq-question"
-                    style="display: flex; align-items: center; justify-content: space-between; background: white; padding: 15px 20px; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <div style="display: flex; align-items: center;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/189/189665.png" alt="Anonymous Icon"
-                            style="width: 24px; height: 24px; margin-right: 10px;">
-                        <h4 style="font-size: 1.2rem; color: #005fa3;">Can I remain anonymous?</h4>
+                <div class="col s12 m6" data-aos="slide-left" data-aos-duration="2000" data-aos-delay="200">
+                    <div class="stat-card"
+                        style="background-color: white; text-align: center; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <h3 style="font-size: 2rem; color: #005fa3; font-size: 35px; font-weight:bold;"><span
+                                style="color: rgb(255, 213, 0);">1 </span>in 3</h3>
+                        <p style="color: #555; font-size: 15px; font-weight:bold;">Women experience violence in their
+                            lifetime. Reporting can help reduce these
+                            statistics.</p>
                     </div>
-                    <span class="toggle-icon" style="font-size: 1.5rem; color: #005fa3;">+</span>
-                </div>
-                <div class="faq-answer"
-                    style="display: none; padding: 15px 20px; background-color: #fff; border-radius: 8px; margin-top: 10px; color: #555;">
-                    Yes, you can choose to report without revealing your identity. Your privacy is our top priority.
                 </div>
             </div>
 
-            <!-- FAQ Item 3 -->
-            <div class="faq-item" style="margin-bottom: 20px;">
-                <div class="faq-question"
-                    style="display: flex; align-items: center; justify-content: space-between; background: white; padding: 15px 20px; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <div style="display: flex; align-items: center;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2748/2748558.png" alt="Support Icon"
-                            style="width: 24px; height: 24px; margin-right: 10px;">
-                        <h4 style="font-size: 1.2rem; color: #005fa3;">What support can I expect after reporting?</h4>
+            <!-- Testimonials or Success Stories Section -->
+            <div class="testimonials" style="margin-top: 40px; text-align: center;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <h3 style="font-size: 1.8rem; color: #333; margin-bottom: 20px;">Real Stories, Real Impact</h3>
+                <blockquote style="font-style: italic; color: #555; font-size: 1.2rem; margin: 20px auto; width: 70%;">
+                    "Thanks to this platform, I was able to report my incident and received the support I desperately
+                    needed. I encourage others to do the same."
+                </blockquote>
+                <p>- Anonymous Survivor</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="resources-support" style="background-color: #eef5ff; padding: 60px 0;">
+        <div class="container">
+            <h2 class="section-title"
+                style="font-size: 2.5rem; color: #005fa3; text-align: center; margin-bottom: 40px;">
+                Resources and Support</h2>
+            <iframe data-aos="fade-in" data-aos-duration="2000" data-aos-delay="200" width="1100" height="630" src="https://www.youtube.com/embed/k8zzHhhpKa0?si=CfHbwZbr9wrpfhft"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <br><br>
+            <div class="row">
+                <div class="col s12 m4" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="card-hover" 
+                        style="background: white; padding: 20px; text-align: center; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <img src="https://img.freepik.com/premium-psd/phone-call-contact-communication-web-button-helpline-hotline-3d-realistic-icon_92753-8921.jpg"
+                            alt="Hotline" style="width: 120px; height: 120px; margin-bottom: 8px;">
+                        <h4 style="font-size: 1.5rem; color: #005fa3;">Hotline</h4>
+                        <p style="color: #555;">Call our 24/7 helpline to get immediate assistance from professionals.
+                        </p>
+                        <a href="tel:+123456789" class="btn"
+                            style="background-color: #005fa3; color: white; margin-top: 10px;">Call Now</a>
                     </div>
-                    <span class="toggle-icon" style="font-size: 1.5rem; color: #005fa3;">+</span>
                 </div>
-                <div class="faq-answer"
-                    style="display: none; padding: 15px 20px; background-color: #fff; border-radius: 8px; margin-top: 10px; color: #555;">
-                    We connect you with resources such as counseling, legal aid, and medical assistance to support you
-                    through the process.
+                <div class="col s12 m4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="card-hover"
+                        style="background: white; padding: 20px; text-align: center; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <img src="https://img.freepik.com/premium-vector/guide-icon-vector-user-manual-service-information-document-instruction_87543-18058.jpg?w=360"
+                            alt="Guide" style="width: 120px; height: 120px; margin-bottom: 8px;">
+                        <h4 style="font-size: 1.5rem; color: #005fa3;">Reporting Guide</h4>
+                        <p style="color: #555;">Download our step-by-step guide on how to report an incident
+                            effectively.
+                        </p>
+                        <a href="#" class="btn"
+                            style="background-color: #005fa3; color: white; margin-top: 10px;">Download</a>
+                    </div>
+                </div>
+                <div class="col s12 m4" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="card-hover"
+                        style="background: white; padding: 20px; text-align: center; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_UjYhpgnNJVCN8is-XlhulWXvonPTeBoM3g&s"
+                            alt="FAQs" style="width: 120px; height: 120px; margin-bottom: 8px;">
+                        <h4 style="font-size: 1.5rem; color: #005fa3;">FAQs</h4>
+                        <p style="color: #555;">Have questions? Check out our FAQs to get quick answers to common
+                            concerns.
+                        </p>
+                        <a href="#faq-section" class="btn"
+                            style="background-color: #005fa3; color: white; margin-top: 10px;">Learn More</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-
-
-<section class="newsletter-section" style="background-color: #333; color: white; padding: 60px 0;">
-    <div class="container" style="text-align: center;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Stay Informed</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 30px;">Subscribe to our newsletter to get the latest updates and
-            resources on combating SGBV.</p>
-        <form style="max-width: 600px; margin: 0 auto;">
-            <input type="email" placeholder="Enter your email address"
-                style="width: 70%; padding: 15px; border-radius: 5px; border: none; margin-right: 10px; color: #fff;">
-            <button type="submit"
-                style="padding: 15px 30px; border: none; background-color: #ff7043; color: white; font-size: 18px; border-radius: 5px;">Subscribe</button>
-        </form>
-    </div>
-</section>
-
-<footer style="background-color: #005fa3; color: #fff; padding: 40px 0;">
-    <div class="container">
-        <div class="row">
-
-            <!-- About Section -->
-            <div class="col s12 m6 l3">
-                <h5 style="font-size: 1.5rem; margin-bottom: 20px;">About Us</h5>
-                <p style="line-height: 1.6;">
-                    We are committed to providing a safe platform for reporting sensitive incidents with confidentiality
-                    and support.
-                </p>
-            </div>
-
-            <!-- Quick Links -->
-            <div class="col s12 m6 l3">
-                <h5 style="font-size: 1.5rem; margin-bottom: 20px;">Quick Links</h5>
-                <ul style="list-style: none; padding: 0;">
-                    <li><a href="#home" style="color: #fff; text-decoration: none;">Home</a></li>
-                    <li><a href="#why-it-matters" style="color: #fff; text-decoration: none;">Why It Matters</a></li>
-                    <li><a href="#faq" style="color: #fff; text-decoration: none;">FAQ</a></li>
-                    <li><a href="#contact" style="color: #fff; text-decoration: none;">Contact Us</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact Section -->
-            <div class="col s12 m6 l3">
-                <h5 style="font-size: 1.5rem; margin-bottom: 20px;">Contact</h5>
-                <p>Email: <a href="mailto:support@example.com"
-                        style="color: #fff; text-decoration: underline;">support@example.com</a></p>
-                <p>Phone: <a href="tel:+1234567890" style="color: #fff; text-decoration: underline;">+1 234 567 890</a>
-                </p>
-                <p>Address: 123 Safe Haven St., Lagos, Nigeria</p>
-            </div>
-
-            <!-- Social Media -->
-            <div class="col s12 m6 l3">
-                <h5 style="font-size: 1.5rem; margin-bottom: 20px;">Follow Us</h5>
-                <div style="display: flex; gap: 10px;">
-                    <a href="#" style="color: #fff;"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-                            alt="Facebook" style="width: 24px;"></a>
-                    <a href="#" style="color: #fff;"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"
-                            alt="Twitter" style="width: 24px;"></a>
-                    <a href="#" style="color: #fff;"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
-                            alt="Instagram" style="width: 24px;"></a>
-                    <a href="#" style="color: #fff;"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-                            alt="LinkedIn" style="width: 24px;"></a>
+    </section>
+    <section class="cta-section" style="background-color: #005fa3; color: white; padding: 60px 0; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">Take a Stand Against SGBV Today</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 40px;" data-aos="fade-in" data-aos-duration="2000" data-aos-delay="200">Your voice can make a difference. Join us in creating a
+                safer
+                world for everyone.</p>
+            <a href="/report" class="btn-large white-text"
+                style="background-color: #ff7043;  font-size: 18px; text-transform: uppercase; border-radius: 5px;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Report
+                Now</a>
+        </div>
+    </section>
+    <section class="faq-section" style="background-color: #f4f4f9; padding: 60px 0;">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="200" style="font-size: 2.5rem; color: #333; text-align: center; margin-bottom: 40px;">
+                Frequently Asked Questions</h2>
+            <div class="faq-container" style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="200">
+                    <div class="faq-question">
+                        <div class="faq-icon-text">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2950/2950733.png" alt="Help Icon">
+                            <h5>What happens after I report an incident?</h5>
+                        </div>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                       <h6>Your report is confidential and will be reviewed by professionals who can provide the necessary support. You'll
+                    receive a response within 24 hours.</h6>
+                    </div>
                 </div>
+                
+                <div class="faq-item" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="200">
+                    <div class="faq-question">
+                        <div class="faq-icon-text">
+                            <img src="https://cdn-icons-png.flaticon.com/512/189/189665.png" alt="Anonymous Icon">
+                            <h5>Can I remain anonymous?</h5>
+                        </div>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <h6>Yes, you can choose to report without revealing your identity. Your privacy is our top priority.</h6>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="200">
+                    <div class="faq-question">
+                        <div class="faq-icon-text">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2748/2748558.png" alt="Support Icon">
+                            <h5>What support can I expect after reporting?</h5>
+                        </div>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <h6>We connect you with resources such as counseling, legal aid, and medical assistance to support you through the
+                        process.</h6>
+                    </div>
+                </div>
+                
+                <!-- New FAQ Item -->
+                <div class="faq-item" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="200">
+                    <div class="faq-question">
+                        <div class="faq-icon-text">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3445/3445153.png" alt="Feedback Icon">
+                            <h5>Can I provide feedback on the support received?</h5>
+                        </div>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <h6>Absolutely! Your feedback is valuable and helps us improve our services. You can provide feedback anonymously if
+                        you prefer.</h6>
+                    </div>
+                </div>
+
             </div>
-
         </div>
+    </section>
 
-        <!-- Copyright -->
-        <div style="text-align: center; margin-top: 20px; font-size: 0.9rem;">
-            &copy; 2025 Safe Reporting. All Rights Reserved.
+
+
+    <section class="newsletter-section" style="background-color: #333; color: white; padding: 60px 0;">
+        <div class="container" style="text-align: center;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Stay Informed</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">Subscribe to our newsletter to get the latest updates and
+                resources on combating SGBV.</p>
+            <form style="max-width: 600px; margin: 0 auto;">
+                <input type="email" id="landing-screen-email" placeholder="Enter your email address"><br><br>
+                <button type="submit"
+                    style="padding: 15px 30px; border: none; background-color: #ff7043; color: white; font-size: 18px; border-radius: 5px;">Subscribe</button>
+            </form>
         </div>
-    </div>
-</footer>
+    </section>
 
-
-<script>
-    // FAQ Toggle Functionality
-    document.querySelectorAll('.faq-question').forEach((item) => {
-        item.addEventListener('click', () => {
-            const answer = item.nextElementSibling;
-            const icon = item.querySelector('.toggle-icon');
-
-            if (answer.style.display === 'block') {
-                answer.style.display = 'none';
-                icon.textContent = '+';
-            } else {
-                answer.style.display = 'block';
-                icon.textContent = '−';
-            }
-        });
-    });
-</script>
- 
-</body>
-</html>
+<%- include('partials/footer') %>

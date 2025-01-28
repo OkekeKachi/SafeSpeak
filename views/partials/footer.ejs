@@ -1,0 +1,91 @@
+</main>
+<footer style="background-color: #005fa3; color: #fff; padding: 40px 0;">
+    <div class="container">
+        <div class="row">
+
+            <!-- About Section -->
+            <div class="col s12 m6 l3">
+                <h5 style="font-size: 1.5rem; margin-bottom: 20px;">About Us</h5>
+                <p style="line-height: 1.6;">
+                    We are committed to providing a safe platform for reporting sensitive incidents with
+                    confidentiality
+                    and support.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col s12 m6 l3">
+                <h5 style="font-size: 1.5rem; margin-bottom: 20px;">Quick Links</h5>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#home" style="color: #fff; text-decoration: none;">Home</a></li>
+                    <li><a href="#why-it-matters" style="color: #fff; text-decoration: none;">Why It Matters</a>
+                    </li>
+                    <li><a href="#faq" style="color: #fff; text-decoration: none;">FAQ</a></li>
+                    <li><a href="#contact" style="color: #fff; text-decoration: none;">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="col s12 m6 l3">
+                <h5 style="font-size: 1.5rem; margin-bottom: 20px;">Contact</h5>
+                <p>Email: <a href="mailto:support@example.com"
+                        style="color: #fff; text-decoration: underline;">support@example.com</a></p>
+                <p>Phone: <a href="tel:+1234567890" style="color: #fff; text-decoration: underline;">+1 234 567
+                        890</a>
+                </p>
+                <p>Address: 123 Safe Haven St., Lagos, Nigeria</p>
+            </div>
+
+            <!-- Social Media -->
+            <div class="col s12 m6 l3">
+                <h5 style="font-size: 1.5rem; margin-bottom: 20px;">Follow Us</h5>
+                <div style=" display: flex; gap: 10px;">
+                    <a href="#" style="color: #fff; margin-left: 80px;"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+                            alt="Facebook" style="width: 24px;"></a>
+                    <a href="#" style="color: #fff;"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"
+                            alt="Twitter" style="width: 24px;"></a>
+                    <a href="#" style="color: #fff;"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
+                            alt="Instagram" style="width: 24px;"></a>
+                    <a href="#" style="color: #fff;"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+                            alt="LinkedIn" style="width: 24px;"></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Copyright -->
+        <div style="text-align: center; margin-top: 20px; font-size: 0.9rem;">
+            &copy; 2025 Safe Reporting. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<script src="javascripts/jQuery.js"></script>
+<script src="javascripts/materialize.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        AOS.init({
+            duration: 1000,  // Animation duration in milliseconds
+            once: true,      // Change to 'true' if you want the animation only once
+            offset: 20,      // Offset (in pixels) from the viewport before triggering
+        });
+    });
+</script>
+<script>
+    document.querySelectorAll('.faq-question').forEach((item) => {
+        item.addEventListener('click', () => {
+            const answer = item.nextElementSibling;
+            const icon = item.querySelector('.toggle-icon');
+
+            answer.classList.toggle('open');
+            icon.textContent = answer.classList.contains('open') ? '−' : '+';
+        });
+    });
+    
+
+</script>
+
+</body>
+
+</html>

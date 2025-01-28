@@ -1,0 +1,34 @@
+<%- include('partials/unauthenticatednavbar') %>
+    <div class="login-container" align="center">
+        <% if (error){ %>
+            <br>
+            <span style="color: red; padding: 10px; border-radius: 10px; background-color: #ffcccc;">
+                <%= error %>
+            </span><br>
+            <% } %>
+        <h4 style="display: inline-block;">Login to your</h4><img src="images/brand-logo.png" alt="brand" width="150px" style="margin-left: 10px; padding-top: 30px;">
+        
+        <form action="/login" method="POST">
+            <!-- Email Input -->
+            
+            <div class="input-field">
+                <i class="material-icons prefix">person</i>
+                <input id="email" type="email" name="email" class="validate" required>
+                <label for="email">Email</label>
+            </div>
+            <!-- Password Input -->
+            <div class="input-field">
+                <i class="material-icons prefix">password</i>
+                <input id="password" type="password" name="password" class="validate" required>
+                <label for="password">Password</label>
+            </div>
+            
+            <!-- Login Button -->
+            <button type="submit" class="btn waves-effect waves-light login-btn">Login</button>
+            <div class="center-align" style="margin-top: 15px;">
+                <p>Don't have an account? <a href="/register">Sign up</a></p>
+            </div>
+        </form>
+    </div><br><br><br><br>
+
+<%- include('partials/footer') %>

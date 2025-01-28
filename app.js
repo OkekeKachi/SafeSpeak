@@ -6,8 +6,17 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+// In app.js or any other file
 
+require('dotenv').config()
+
+// console.log(process.env.DATABASE_URL)
 var app = express();
+
+var session = require('express-session')
+const sessionOptions = { secret: process.env.secret_key, resave: false, saveUnitialized: false };
+
+app.use(session(sessionOptions))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

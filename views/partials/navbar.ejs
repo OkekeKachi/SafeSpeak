@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGBV</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/materialize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <div class="navbar-fixed">
+            <nav class="nav-wrapper white" style="height: 80px; padding-top: 10px; padding-bottom: 10px;">
+                <div class="container navbar">
+                    <a href="/" class="brand-logo" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
+                        <img src="images/brand-logo.png" alt="" width="150px">
+                    </a>
+                    <a href="#mobile-links" class="sidenav-trigger">
+                        <i class="material-icons orange-text text-darken-4">menu</i>
+                    </a>
+                    <ul class="center hide-on-med-and-down"
+                        style="flex-grow: 1; display: flex; justify-content: space-between; padding-left:280px; ">
+                        <li><a href="/" class=" nav-links ">Home</a></li>
+                        <li><a href="/report" class=" nav-links ">Report Incident</a></li>
+                        <li><a href="/resources" class=" nav-links ">Resources</a></li>
+                        <li><a href="/about" class=" nav-links ">About Us</a></li>
+                        <li><a href="/contact" class=" nav-links ">Contact</a></li>
+
+                        <% if (user) { %>
+                            <!-- Show user's initials -->
+                            <div class="user-initials" title="<%= user.username %>">
+                                <%= user.name.split(' ') // Split the name into parts based on spaces
+                                    .map(name => name.charAt(0).toUpperCase()) // Get the first letter and convert it to uppercase
+                                    .join(''); %>
+                            </div>
+                        <% } else { %>                        
+                            <li style="padding-left: 40px;" class=" hide-on-small-only">
+                                <a href="/login" class="blue-text text-darken-4">
+                                    <i class="material-icons small left ">account_circle</i>
+                                    Login
+                                </a>
+                            </li>
+                            <li style="padding-left: 10px; padding-top: 2px;" class=" hide-on-med-and-up">
+                                <a href="/login" class="red-text text-darken-4">
+                                    Login
+                                </a>
+                            </li>
+                        <% } %>
+
+                    </ul>
+                    
+                </div>
+            </nav>
+        </div>
+
+        <!-- Mobile Sidebar -->
+        <ul class="sidenav" id="mobile-nav">
+            <li><a href="/" class="blue-text text-darken-2">Home</a></li>
+            <li><a href="/report" class="blue-text text-darken-2">Report Incident</a></li>
+            <li><a href="/resources" class="blue-text text-darken-2">Resources</a></li>
+            <li><a href="/about" class="blue-text text-darken-2">About Us</a></li>
+            <li><a href="/contact" class="blue-text text-darken-2">Contact</a></li>
+            <li><a href="/login" class="btn-small blue lighten-1 white-text">Login</a></li>
+        </ul>
+    </header>
+    <main>

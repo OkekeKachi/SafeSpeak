@@ -1,0 +1,48 @@
+<%- include('partials/unauthenticatednavbar') %>
+<!-- Register Form Section -->
+<div class="register-container row grey lighten-5" align="center">    
+    <% if (error){ %>
+        <br>
+        <span style="  color: red; padding: 10px; border-radius: 10px; background-color: #ffcccc;">
+            <%= error %>
+        </span>
+        <br>
+        <% } %>
+    <h4 class="register-header">Create an Account</h4>
+    <form action="/signup" method="POST">
+        <!-- Email Input -->
+        <div class="input-field col s6">
+            <input id="firstName" type="text" name="firstName" class="validate" required>
+            <label for="firstname">first name</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="lastName" type="text" name="lastName" class="validate" required>
+            <label for="lastname">last name</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="email" type="email" name="email" class="validate" required>
+            <label for="email">Email</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="phone" type="tel" name="phone" class="validate" required>
+            <label for="phone">Phone number</label>
+        </div>
+        <!-- Password Input -->
+        <div class="input-field col s12">
+            <input id="password" type="password" name="password" class="validate" required>
+            <label for="password">Password</label>
+        </div>
+        <!-- Confirm Password Input -->
+        <div class="input-field col s12">
+            <input id="confirm_password" type="password" name="confirm_password" class="validate" required>
+            <label for="confirm_password">Confirm Password</label>
+        </div>        
+        <!-- Register Button -->
+        <button type="submit" class="btn waves-effect waves-light register-btn">Register</button>
+        <div class="center-align" style="margin-top: 15px;">
+            <p>Already have an account? <a href="/login">Login</a></p>
+        </div>
+    </form>
+</div>
+<br><br>
+<%- include('partials/footer') %>

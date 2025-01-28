@@ -932,11 +932,11 @@
 }
 
 .cyan.darken-3 {
-  background-color: #00838f !important;
+  background-color: #0277bd !important;
 }
 
 .cyan-text.text-darken-3 {
-  color: #00838f !important;
+  color: #0277bd !important;
 }
 
 .cyan.darken-4 {
@@ -6225,9 +6225,9 @@ input[type=tel]:not(.browser-default):focus:not([readonly]),
 input[type=number]:not(.browser-default):focus:not([readonly]),
 input[type=search]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #990000;
-  -webkit-box-shadow: 0 1px 0 0 #990000;
-          box-shadow: 0 1px 0 0 #990000;
+  border-bottom: 1px solid #0277bd;
+  -webkit-box-shadow: 0 1px 0 0 #0277bd;
+          box-shadow: 0 1px 0 0 #0277bd;
 }
 
 input:not([type]):focus:not([readonly]) + label,
@@ -6243,7 +6243,7 @@ input[type=tel]:not(.browser-default):focus:not([readonly]) + label,
 input[type=number]:not(.browser-default):focus:not([readonly]) + label,
 input[type=search]:not(.browser-default):focus:not([readonly]) + label,
 textarea.materialize-textarea:focus:not([readonly]) + label {
-  color: #990000;
+  color: #0277bd;
 }
 
 input:not([type]):focus.valid ~ label,
@@ -6259,7 +6259,7 @@ input[type=tel]:not(.browser-default):focus.valid ~ label,
 input[type=number]:not(.browser-default):focus.valid ~ label,
 input[type=search]:not(.browser-default):focus.valid ~ label,
 textarea.materialize-textarea:focus.valid ~ label {
-  color: #4CAF50;
+  color: #0277bd;
 }
 
 input:not([type]):focus.invalid ~ label,
@@ -6351,9 +6351,9 @@ input.invalid[type=search]:not(.browser-default):focus,
 textarea.materialize-textarea.invalid,
 textarea.materialize-textarea.invalid:focus, .select-wrapper.invalid > input.select-dropdown,
 .select-wrapper.invalid > input.select-dropdown:focus {
-  border-bottom: 1px solid #F44336;
-  -webkit-box-shadow: 0 1px 0 0 #F44336;
-          box-shadow: 0 1px 0 0 #F44336;
+  border-bottom: 1px solid #01579b;
+  -webkit-box-shadow: 0 1px 0 0 #01579b;
+          box-shadow: 0 1px 0 0 #01579b;
 }
 
 input:not([type]).valid ~ .helper-text[data-success],
@@ -6585,7 +6585,7 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
 }
 
 .input-field .prefix.active {
-  color: #990000;
+  color: #0277bd;
 }
 
 .input-field .prefix ~ input,
