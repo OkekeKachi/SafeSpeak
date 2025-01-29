@@ -21,7 +21,10 @@ const ensureAuthenticated = (req, res, next) => {
 
 /* GET home page. */
 router.get('/', function (req, res, next) {  
-  res.render('index', { user: req.session.user});
+  const successMessage = req.session.successMessage;
+  req.session.successMessage = null; // Clear after displaying
+  res.render('index', { successMessage, user: req.session.user });
+  
 });
 
 router.get('/resources', (req, res, next) => {
@@ -33,7 +36,9 @@ router.get('/report',ensureAuthenticated, (req, res, next) => {
   res.render('report',{error:""});
 });
 router.get('/login', (req, res, next) => {
-  res.render('login',{error:""});
+  const successMessage = req.session.successMessage;
+  req.session.successMessage = null; // Clear after displaying
+  res.render('login', { error: "", successMessage });
 });
 
 router.get('/register', (req, res, next) => {
@@ -67,9 +72,8 @@ router.post('/signup', async (req, res) => {
       phone,
       createdAt: new Date(),
     });
-
-    // Redirect to login page after successful registration
-    res.redirect("/login");
+    req.session.successMessage = "Account Created Successfully";
+    return res.redirect('/login');
   } catch (error) {
     // Handle Firebase-specific errors
     if (error.code === 'auth/email-already-in-use') {
@@ -122,6 +126,7 @@ router.post('/login', async (req, res) => {
 
     // Save user session
     req.session.user = res.locals.user;
+    req.session.successMessage = "Login successful! Welcome back.";
 
     return res.redirect('/');
   } catch (error) {
@@ -161,7 +166,8 @@ router.post('/submit-report', async (req, res) => {
         // Save the date of the incident
         timestamp: new Date(),
       });      
-      res.redirect("/")
+      req.session.successMessage = "Report submitted successfully!";
+      return res.redirect('/view-reports');
     } else {
       res.redirect("/login")
     }
@@ -193,7 +199,11 @@ router.get('/view-reports', ensureAuthenticated, async (req, res, next) => {
   }
 
   // Render the view and pass the reports (empty if none found)
-  res.render('view-reports', { error: "", reports });
+  
+  const successMessage = req.session.successMessage;
+  req.session.successMessage = null; // Clear after displaying
+
+  res.render('view-reports', { successMessage, error: "", reports });
 });
 
 
