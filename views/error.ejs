@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error</title>
-</head>
-
-<body>
-    <h1>Oops! Something went wrong.</h1>
-    <p>
-        <%= message %>
-    </p>
-    <p>
-        <%= error.status %> - <%= error.stack %>
-    </p>
-</body>
-
-</html>
+<%- include("partials/unauthenticatednavbar") %>
+    <br><br><div class="container red-text" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        <h4>
+            <%= error.status %> <%= message %>
+        </h4>
+    </div>
+    
+    
+<%- include("partials/footer") %>
